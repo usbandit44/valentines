@@ -26,16 +26,6 @@ const Card: React.FC<CardProps> = ({
 
   const handleFlip = () => setFlipped(!flipped);
 
-  const handleSlideOut = () => {
-    // setSlideOut(true)
-    // Optional: remove the card from DOM after animation
-    setTimeout(() => {
-      setAnimateIn(false);
-      setFlipped(false);
-      // setSlideOut(false)
-    }, 1000); // match animation duration
-  };
-
   return (
     <div style={{ textAlign: "center" }}>
       <div

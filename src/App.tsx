@@ -1,9 +1,11 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./index.css";
 import Fireworks from "./components/Firework/Fireworks";
 import Card from "./components/Card/Card";
+import removeBgImg from "./assets/RemoveBackgroundImage.png";
+import cartoonHeartCopy from "./assets/CartoonHeartDrawingcopy.png";
+import cartoonHeart from "./assets/CartoonHeartDrawing.png";
+import heartDrawing from "./assets/HeartDrawing.png";
 
 function App() {
   const quotesArray = [
@@ -21,10 +23,7 @@ function App() {
   const frontCard = () => {
     return (
       <div className="w-full h-full justify-center items-center flex flex-col gap-4">
-        <img
-          className="w-full h-[65%] object-contain"
-          src="./public/Remove Background Image.png"
-        ></img>
+        <img className="w-full h-[65%] object-contain" src={removeBgImg}></img>
         <h4 className="decoration-black">Click Me!</h4>
       </div>
     );
@@ -34,11 +33,11 @@ function App() {
       <div className="w-full h-full justify-center items-center flex flex-col gap-4">
         <img
           className="w-[15%] object-contain absolute top-5 right-5"
-          src="./public/Cartoon Heart Drawing copy.png"
+          src={cartoonHeartCopy}
         ></img>
         <img
           className="w-[15%] object-contain absolute top-5 left-5"
-          src="./public/Cartoon Heart Drawing.png"
+          src={cartoonHeart}
         ></img>
         <h4>{quotesArray[quote]}</h4>
       </div>
@@ -88,12 +87,13 @@ function App() {
       ) : null}
       {showEnding ? (
         <>
-          <div className="fixed inset-0 flex justify-center items-center">
+          <div className="fixed inset-0 flex justify-center items-center flex-col gap-4">
             <img
-              src="./public/Heart Drawing.png"
+              src={heartDrawing}
               alt="Pulsing"
               className="w-32 h-32 animate-pulse-custom"
             />
+            <h4>I Love You!</h4>
           </div>
           <Fireworks></Fireworks>
         </>
